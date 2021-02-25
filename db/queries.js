@@ -5,6 +5,7 @@ const { pool } = require('../config');
 // GetGrowingPlants
 // GetGrownPlants
 // GetPlantsByLocation
+// Ensure that the HTTP codes are correct
 
 // --- QUERIES FOR USERS ---
 
@@ -121,8 +122,8 @@ const getPlantById = (req, res) => {
 		if (error) {
 			throw error;
 		}
+		res.status(200).json(results.rows);
 	});
-	res.status(200).json(results.rows);
 };
 
 const updatePlant = (req, res) => {

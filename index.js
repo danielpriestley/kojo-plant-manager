@@ -1,6 +1,10 @@
 // INDEX.JS IS THE ENTRY POINT FOR THE SERVER
 require('dotenv').config();
 
+// TODO:
+// add auth
+// add security
+
 // Packages
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -34,6 +38,7 @@ app.put('/api/v1/users/:id', db.updateUser);
 // Routes for Plants
 app.get('/api/v1/plants', db.getAllPlants);
 app.post('/api/v1/plants', db.createPlant);
+app.get('/api/v1/plant/:id', db.getPlantById);
 app.get('/api/v1/plants/:id', db.getAllPlantsByUser);
 app.delete('/api/v1/plants/:id', db.deletePlant);
 app.put('/api/v1/plants/:id', db.updatePlant);
