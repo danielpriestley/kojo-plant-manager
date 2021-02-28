@@ -141,6 +141,12 @@ const updatePlant = (req, res) => {
 	);
 };
 
+const login = (req, res) => {
+	const { user } = req;
+
+	res.json(user);
+};
+
 module.exports = {
 	getAllUsers,
 	createUser,
@@ -152,5 +158,6 @@ module.exports = {
 	getAllPlantsByUser,
 	createPlant,
 	deletePlant,
-	updatePlant
+	updatePlant,
+	login
 };
